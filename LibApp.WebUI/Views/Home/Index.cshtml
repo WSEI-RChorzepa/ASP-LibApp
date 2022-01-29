@@ -6,24 +6,28 @@
 }
 
 <div class="container">
-    <div class="tile-container">
-        <a asp-controller="Rentals" asp-action="New" class="tile">
-            <span class="icon fa fa-shopping-cart"></span>
-            <div class="title">
-                Rental
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="row">
+                <div class="offset-3 col-3 text-right">
+                    Imię i nazwisko:
+                </div>
+                <div class="col-3 text-left">
+                    <strong>
+                        Rafał Chorzępa
+                    </strong>
+                </div>
             </div>
-        </a>
-        <a asp-controller="Customers" asp-action="Index" class="tile">
-            <span class="icon fa fa-users-cog"></span>
-            <div class="title">
-                Customers
+            <div class="row">
+                <div class="offset-3 col-3 text-right">
+                    Grupa:
+                </div>
+                <div class="col-3 text-left">
+                    <strong>
+                        lab2
+                    </strong>
+                </div>
             </div>
-        </a>
-        <a asp-controller="Books" asp-action="Index" class="tile">
-            <span class="icon fa fa-book"></span>
-            <div class="title">
-                Books
-            </div>
-        </a>
+        </div>
     </div>
 </div>

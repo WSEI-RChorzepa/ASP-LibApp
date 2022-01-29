@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using LibApp.Application;
 using LibApp.Persistence;
 using LibApp.WebUI.Profiles;
+using LibApp.Domain.Enums;
 
 namespace LibApp.WebUI
 {
@@ -21,13 +22,27 @@ namespace LibApp.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddControllersWithViews();
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.ReisterApplication(Configuration);
             services.ReisterPersistence(Configuration);
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+
+            services.AddAuthorization(opt =>
+            {
+                opt.AddPolicy("AdminAccess", policy =>
+                {
+                    policy.RequireRole(RoleEnum.Owner.ToString());
+                });
+
+                opt.AddPolicy("EditAccess", policy =>
+                {
+                    policy.RequireAssertion(context => context.User.IsInRole(RoleEnum.StoreManager.ToString())
+                    || context.User.IsInRole(RoleEnum.Owner.ToString()));
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

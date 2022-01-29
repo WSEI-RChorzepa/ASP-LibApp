@@ -7,6 +7,24 @@
 
 <h2>New Rental</h2>
 
+<div class="row">
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" aria-current="page">
+                    <a asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="breadcrumb-item" aria-current="page">
+                   Rentals
+                </li>
+                 <li class="breadcrumb-item" aria-current="page">
+                   Add new rental
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
 <form id="newRental">
     <div id="#response"></div>
     <div class="form-group">
@@ -26,6 +44,9 @@
     <ul id="books" class="list-group col-lg-4 col-md-4 col-sm-4 mt-2 mb-5"></ul>
 
     <button class="btn btn-primary btn-sm" type="submit">Submit</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary btn-sm">
+        Back to main page
+    </a>
 </form>
 
 @section Scripts {

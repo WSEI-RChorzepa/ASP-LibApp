@@ -5,6 +5,25 @@
 }
 
 <h2>@Model.Name</h2>
+
+<div class="row">
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" aria-current="page">
+                    <a asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a asp-controller="Books" asp-action="Index">Books</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Book details
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
 <ul>
     <li>Author Name: @Model.AuthorName</li>
     <li>Genre: @Model.Genre.Name</li>

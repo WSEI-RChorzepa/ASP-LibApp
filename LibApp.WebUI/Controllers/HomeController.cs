@@ -5,8 +5,10 @@ using System.Diagnostics;
 
 namespace LibApp.WebUI.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
+
         public HomeController()
         {
   

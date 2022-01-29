@@ -1,0 +1,110 @@
+﻿@page
+@model LibApp.WebUI.Areas.Identity.Pages.Account.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="mt-5">
+    <h6>Register customer</h6>
+
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="breadcrumb-item" aria-current="page">
+                        Account
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Register customer
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+
+                <p>Create a new customer account</p>
+                <hr />
+
+                <div class="row">
+                    <div class="col-12">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="Input.Email"></label>
+                            <input asp-for="Input.Email" class="form-control form-control-sm" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Password"></label>
+                            <input asp-for="Input.Password" class="form-control form-control-sm" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.ConfirmPassword"></label>
+                            <input asp-for="Input.ConfirmPassword" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="Input.Name"></label>
+                            <input asp-for="Input.Name" class="form-control form-control-sm" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.MembershipTypeId"></label>
+                            <select asp-for="Input.MembershipTypeId" asp-items="Model.MembershipTypes" class="form-control form-control-sm"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Birthdate"></label>
+                            <input asp-for="Input.Birthdate" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label asp-for="Input.HasNewsletterSubscribed">
+                                <input asp-for="Input.HasNewsletterSubscribed" />
+                                @Html.DisplayNameFor(m => m.Input.HasNewsletterSubscribed)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <p>Assign to application role:</p>
+                        <div class="form-check">
+                            @for (var i = 0; i < Model.Roles.Count(); i++)
+                            {
+                                <div class="form-check">
+                                    <input asp-for="@Model.Roles[i].Value" type="hidden" />
+                                    <input asp-for="@Model.Roles[i].Text" type="hidden" />
+                                    <input asp-for="@Model.Roles[i].Selected" />
+                                    <label>@Model.Roles[i].Text</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-sm">Create account</button>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-secondary btn-sm">
+                    Back to main page
+                </a>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}

@@ -1,13 +1,12 @@
 using LibApp.Domain.Validations;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace LibApp.Domain.Entities
 {
-    public class Customer
+    public class Customer : IdentityUser<int>
     {
-        public int Id { get; set; }
-
         [Required(ErrorMessage = "Please provide customer's name")]
         [StringLength(255)]
         public string Name { get; set; }

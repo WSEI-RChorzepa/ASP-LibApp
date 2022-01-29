@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LibApp.WebUI.Controllers
 {
+    [Authorize]
     public class BaseController : Controller
     {
         private readonly IMediator _mediator;

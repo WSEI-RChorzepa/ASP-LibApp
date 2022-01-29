@@ -8,6 +8,9 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Rentals" asp-action="New">New Rental</a>
                         </li>
                         <li class="nav-item">
@@ -16,7 +19,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Books" asp-action="Index">Books</a>
                         </li>
-                    </ul>
+                        @if (User.IsInRole(RoleEnum.Owner.ToString()))
+                        {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Create customer account</a>
+                        </li>
+                        }
+                </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
