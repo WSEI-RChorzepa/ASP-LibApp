@@ -22,3 +22,15 @@ C:\Users\rafal\Documents\WSEI\LibApp\LibApp.Domain\obj\Debug\net5.0\LibApp.Domai
 C:\Users\rafal\Documents\WSEI\LibApp\LibApp.Domain\obj\Debug\net5.0\LibApp.Domain.dll
 C:\Users\rafal\Documents\WSEI\LibApp\LibApp.Domain\obj\Debug\net5.0\ref\LibApp.Domain.dll
 C:\Users\rafal\Documents\WSEI\LibApp\LibApp.Domain\obj\Debug\net5.0\LibApp.Domain.pdb
+C:\Users\rafal\Documents\WSEI\ASP-LibApp\LibApp.Domain\bin\Debug\net5.0\LibApp.Domain.deps.json
+C:\Users\rafal\Documents\WSEI\ASP-LibApp\LibApp.Domain\bin\Debug\net5.0\LibApp.Domain.dll
+C:\Users\rafal\Documents\WSEI\ASP-LibApp\LibApp.Domain\bin\Debug\net5.0\ref\LibApp.Domain.dll
+C:\Users\rafal\Documents\WSEI\ASP-LibApp\LibApp.Domain\bin\Debug\net5.0\LibApp.Domain.pdb
+C:\Users\rafal\Documents\WSEI\ASP-LibApp\LibApp.Domain\obj\Debug\net5.0\LibApp.Domain.csproj.AssemblyReference.cache
+C:\Users\rafal\Documents\WSEI\ASP-LibApp\LibApp.Domain\obj\Debug\net5.0\LibApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rafal\Documents\WSEI\ASP-LibApp\LibApp.Domain\obj\Debug\net5.0\LibApp.Domain.AssemblyInfoInputs.cache
+C:\Users\rafal\Documents\WSEI\ASP-LibApp\LibApp.Domain\obj\Debug\net5.0\LibApp.Domain.AssemblyInfo.cs
+C:\Users\rafal\Documents\WSEI\ASP-LibApp\LibApp.Domain\obj\Debug\net5.0\LibApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\rafal\Documents\WSEI\ASP-LibApp\LibApp.Domain\obj\Debug\net5.0\LibApp.Domain.dll
+C:\Users\rafal\Documents\WSEI\ASP-LibApp\LibApp.Domain\obj\Debug\net5.0\ref\LibApp.Domain.dll
+C:\Users\rafal\Documents\WSEI\ASP-LibApp\LibApp.Domain\obj\Debug\net5.0\LibApp.Domain.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.API\\LibApp.API.csproj": {}
+    "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.API\\LibApp.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.API\\LibApp.API.csproj": {
+    "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.API\\LibApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.API\\LibApp.API.csproj",
+        "projectUniqueName": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.API\\LibApp.API.csproj",
         "projectName": "LibApp.API",
-        "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.API\\LibApp.API.csproj",
+        "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.API\\LibApp.API.csproj",
         "packagesPath": "C:\\Users\\rafal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.API\\obj\\",
+        "outputPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rafal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Application\\LibApp.Application.csproj": {
-                "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Application\\LibApp.Application.csproj"
+              "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Application\\LibApp.Application.csproj": {
+                "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Application\\LibApp.Application.csproj"
               },
-              "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Persistence\\LibApp.Persistence.csproj": {
-                "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Persistence\\LibApp.Persistence.csproj"
+              "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Persistence\\LibApp.Persistence.csproj": {
+                "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Persistence\\LibApp.Persistence.csproj"
               }
             }
           }
@@ -90,14 +90,14 @@
         }
       }
     },
-    "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Application\\LibApp.Application.csproj": {
+    "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Application\\LibApp.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Application\\LibApp.Application.csproj",
+        "projectUniqueName": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Application\\LibApp.Application.csproj",
         "projectName": "LibApp.Application",
-        "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Application\\LibApp.Application.csproj",
+        "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Application\\LibApp.Application.csproj",
         "packagesPath": "C:\\Users\\rafal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Application\\obj\\",
+        "outputPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rafal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -114,8 +114,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj": {
-                "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj"
+              "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj": {
+                "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj"
               }
             }
           }
@@ -182,14 +182,14 @@
         }
       }
     },
-    "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj": {
+    "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj",
         "projectName": "LibApp.Domain",
-        "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj",
+        "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj",
         "packagesPath": "C:\\Users\\rafal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\obj\\",
+        "outputPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rafal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -236,14 +236,14 @@
         }
       }
     },
-    "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Persistence\\LibApp.Persistence.csproj": {
+    "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Persistence\\LibApp.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Persistence\\LibApp.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Persistence\\LibApp.Persistence.csproj",
         "projectName": "LibApp.Persistence",
-        "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Persistence\\LibApp.Persistence.csproj",
+        "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Persistence\\LibApp.Persistence.csproj",
         "packagesPath": "C:\\Users\\rafal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Persistence\\obj\\",
+        "outputPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rafal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -260,11 +260,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Application\\LibApp.Application.csproj": {
-                "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Application\\LibApp.Application.csproj"
+              "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Application\\LibApp.Application.csproj": {
+                "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Application\\LibApp.Application.csproj"
               },
-              "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj": {
-                "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj"
+              "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj": {
+                "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj"
               }
             }
           }

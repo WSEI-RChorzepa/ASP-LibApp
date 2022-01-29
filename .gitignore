@@ -519,3 +519,15 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/aspnetcore,visualstudio
+
+
+LibApp.API/obj
+LibApp.API\obj
+LibApp.Application/obj
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+
+bin
+obj
+packages

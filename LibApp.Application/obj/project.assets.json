@@ -631,11 +631,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Application\\LibApp.Application.csproj",
+      "projectUniqueName": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Application\\LibApp.Application.csproj",
       "projectName": "LibApp.Application",
-      "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Application\\LibApp.Application.csproj",
+      "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Application\\LibApp.Application.csproj",
       "packagesPath": "C:\\Users\\rafal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Application\\obj\\",
+      "outputPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rafal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -652,8 +652,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj": {
-              "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj"
+            "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj": {
+              "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj"
             }
           }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj": {}
+    "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj": {
+    "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj",
         "projectName": "LibApp.Domain",
-        "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\LibApp.Domain.csproj",
+        "projectPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\LibApp.Domain.csproj",
         "packagesPath": "C:\\Users\\rafal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Domain\\obj\\",
+        "outputPath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rafal\\AppData\\Roaming\\NuGet\\NuGet.Config",

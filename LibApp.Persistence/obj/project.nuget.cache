@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4tZHosk5lP/KTSxLp/b8XbJ0q4tabxlSuXJZnOmnkU9pyitq633Kd/LTCrKn4EXatligA4hApL6Dy44v7mdD3w==",
+  "dgSpecHash": "W6shHXSCxVkixWV1LMHSFDvODoMTlYOdWI1XY9aLKP7iK/oJHCnq7gQw7fxC2nrpAftoBM6wlxsVtB0f1taG0g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.Persistence\\LibApp.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.Persistence\\LibApp.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rafal\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\rafal\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

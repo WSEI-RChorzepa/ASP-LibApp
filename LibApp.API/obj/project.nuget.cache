@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Dg/EPCcZ0wlbHiR1DO9sPXrixYCMoF25aLZT8TbUsium5zUnmqvdtWeZ9zhzkAwrBPd+I0nQJF7NcoVGM2XA2Q==",
+  "dgSpecHash": "qr4ryEsqZKMu3gtEK3wcpmzVZppl4U2eKbsHylncWFSpTf2XgXfU0qWa5njsifbZh2D0awssa9zzabUyOaWp+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rafal\\Documents\\WSEI\\LibApp\\LibApp.API\\LibApp.API.csproj",
+  "projectFilePath": "C:\\Users\\rafal\\Documents\\WSEI\\ASP-LibApp\\LibApp.API\\LibApp.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rafal\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\rafal\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
