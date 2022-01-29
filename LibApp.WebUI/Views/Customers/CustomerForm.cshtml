@@ -1,0 +1,51 @@
+﻿@model LibApp.WebUI.Models.AddOrUpdateCustomerFormModel
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var membershipTypes = ViewBag.MembershipTypes as ICollection<LibApp.Application.Core.Dtos.MembershipTypeDto>;
+    var title = @Model.Id != 0 ? "Edit customer" : "Update customer";
+
+    ViewBag.Title = title;
+}
+
+<h2>@title</h2>
+
+@using (Html.BeginForm("Save", "Customers"))
+{
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control form-control-sm" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Birthdate)
+        @Html.TextBoxFor(m => m.Birthdate, new { @class = "form-control form-control-sm" })
+        @Html.ValidationMessageFor(m => m.Birthdate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MembershipTypeId)
+        @Html.DropDownListFor(m => m.MembershipTypeId, new SelectList(@membershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control form-control-sm" })
+        @Html.ValidationMessageFor(m => m.MembershipTypeId)
+    </div>
+    <div class="form-group">
+        <label class="form-check-label">
+            @Html.CheckBoxFor(m => m.HasNewsletterSubscribed)
+            Subscribed to Newsletter?
+        </label>
+    </div>
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.AntiForgeryToken()
+    <div>
+        <button type="submit" class="btn btn-primary btn-sm">Save</button>
+        <a asp-action="Index" class="btn btn-secondary btn-sm">Cancel</a>
+    </div>
+}
+
+@section scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}

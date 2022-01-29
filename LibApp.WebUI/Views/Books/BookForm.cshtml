@@ -1,0 +1,55 @@
+﻿@model LibApp.WebUI.Models.AddOrUpdateBookFormModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var genres = ViewBag.Genres as ICollection<LibApp.Application.Core.Dtos.GenreDto>;
+    var title = @Model.Id != 0 ? "Edit book" : "Update book";
+
+    ViewBag.Title = title;
+}
+
+<h2>@title</h2>
+
+@using (Html.BeginForm("Save", "Books"))
+{
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control form-control-sm" })
+        @Html.ValidationMessageFor(m=>m.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.AuthorName)
+        @Html.TextBoxFor(m => m.AuthorName, new { @class = "form-control form-control-sm" })
+        @Html.ValidationMessageFor(m=>m.AuthorName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GenreId)
+        @Html.DropDownListFor(m => m.GenreId, new SelectList(@genres, "Id", "Name"), "Select Genre", new { @class = "form-control form-control-sm" })
+        @Html.ValidationMessageFor(m=>m.GenreId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ReleaseDate)
+        @Html.TextBoxFor(m => m.ReleaseDate, new { @class = "form-control form-control-sm" })
+        @Html.ValidationMessageFor(m=>m.ReleaseDate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumberInStock)
+        @Html.TextBoxFor(m => m.NumberInStock, new { @class = "form-control form-control-sm", type="number" })
+        @Html.ValidationMessageFor(m=>m.NumberInStock)
+    </div>
+
+
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id);
+    <div>
+        <button type="submit" class="btn btn-primary btn-sm">Save</button>
+        <a asp-action="Index" class="btn btn-secondary btn-sm">Cancel</a>
+    </div>
+}
+
+@section scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}

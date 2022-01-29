@@ -1,0 +1,29 @@
+﻿@model DateTime?
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="tile-container">
+        <a asp-controller="Rentals" asp-action="New" class="tile">
+            <span class="icon fa fa-shopping-cart"></span>
+            <div class="title">
+                Rental
+            </div>
+        </a>
+        <a asp-controller="Customers" asp-action="Index" class="tile">
+            <span class="icon fa fa-users-cog"></span>
+            <div class="title">
+                Customers
+            </div>
+        </a>
+        <a asp-controller="Books" asp-action="Index" class="tile">
+            <span class="icon fa fa-book"></span>
+            <div class="title">
+                Books
+            </div>
+        </a>
+    </div>
+</div>
