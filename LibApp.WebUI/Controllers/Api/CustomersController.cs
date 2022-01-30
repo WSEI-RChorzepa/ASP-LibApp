@@ -2,6 +2,7 @@
 using LibApp.Application.Core.Contracts.Persistence;
 using LibApp.Application.Core.Dtos;
 using LibApp.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,23 +45,9 @@ namespace LibApp.WebUI.Controllers.Api
             return Ok(customer);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateCustomer([FromBody] CustomerDto customerDto)
-        {
-            var model = Mapper.Map<Customer>(customerDto);
-
-            if (!TryValidateModel(model, nameof(Customer)))
-                return BadRequest(ModelState);
-
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            await _customerRepository.CreateAsync(model);
-
-            return CreatedAtAction(nameof(GetCustomser), new { id = model.Id }, model);
-        }
 
         [HttpPut]
+        [Authorize(Policy ="EditAcesss")]
         public async Task<IActionResult> UpdateCustomer([FromBody] CustomerDto customerDto)
         {
             var customerInDb = await _customerRepository.GetAsync(customerDto.Id);
@@ -79,6 +66,7 @@ namespace LibApp.WebUI.Controllers.Api
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Policy = "EditAccess")]
         public async Task<IActionResult> DeleteCustomer(int id)
         {
             var entity = await _customerRepository.GetAsync(id);

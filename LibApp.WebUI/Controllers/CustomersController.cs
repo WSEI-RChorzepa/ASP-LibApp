@@ -7,6 +7,7 @@ using LibApp.Application.UseCases.MembershipTypes.Queries;
 using LibApp.WebUI.Models;
 using LibApp.Application.UseCases.Customers.Commands;
 using LibApp.Application.Core.Exceptions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LibApp.WebUI.Controllers
 {
@@ -27,6 +28,7 @@ namespace LibApp.WebUI.Controllers
             return Ok(model);
         }
 
+        [Authorize(Policy = "EditAccess")]
         public async Task<IActionResult> New()
         {
             ViewBag.MembershipTypes = await Mediator.Send(new GetMembershipTypes.Query());
@@ -34,6 +36,7 @@ namespace LibApp.WebUI.Controllers
             return View("CustomerForm", new AddOrUpdateCustomerFormModel());
         }
 
+        [Authorize(Policy = "EditAccess")]
         public async Task<IActionResult> Edit(int id)
         {
             var customer = await Mediator.Send(new GetCustomer.Query { Id = id });
@@ -54,6 +57,7 @@ namespace LibApp.WebUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "EditAccess")]
         public async Task<IActionResult> Save(AddOrUpdateCustomerFormModel model)
         {
             try

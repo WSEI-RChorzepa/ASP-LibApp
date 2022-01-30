@@ -7,6 +7,7 @@ using LibApp.WebUI.Models;
 using AutoMapper;
 using LibApp.Application.UseCases.Genres.Queries;
 using LibApp.Application.Core.Exceptions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LibApp.WebUI.Controllers
 {
@@ -26,6 +27,7 @@ namespace LibApp.WebUI.Controllers
             return Ok(model);
         }
 
+        [Authorize(Policy = "EditAccess")]
         public async Task<IActionResult> New()
         {
             ViewBag.Genres = await Mediator.Send(new GetGenres.Query());
@@ -33,6 +35,7 @@ namespace LibApp.WebUI.Controllers
             return View("BookForm", new AddOrUpdateBookFormModel());
         }
 
+        [Authorize(Policy = "EditAccess")]
         public async Task<IActionResult> Edit(int id)
         {
             var book = await Mediator.Send(new GetBook.Query { Id = id });
@@ -52,6 +55,7 @@ namespace LibApp.WebUI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "EditAccess")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Save(AddOrUpdateBookFormModel model)
         {
@@ -76,6 +80,7 @@ namespace LibApp.WebUI.Controllers
             return RedirectToAction("Index", "Books");
         }
 
+        [Authorize(Policy = "EditAccess")]
         public async Task<IActionResult> RemoveBook(int id)
         {
             await Mediator.Send(new RemoveBook.Command { Id = id });

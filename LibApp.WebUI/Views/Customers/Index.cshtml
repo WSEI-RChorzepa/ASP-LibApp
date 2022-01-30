@@ -1,6 +1,9 @@
 @{
     ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var accessType = User.IsInRole(RoleEnum.Owner.ToString())
+        || User.IsInRole(RoleEnum.StoreManager.ToString())
+            ? "Edit" : "View";
 }
 
 <h2>Customers</h2>
@@ -13,20 +16,23 @@
                     <a asp-controller="Home" asp-action="Index">Home</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                   Customers
+                    Customers
                 </li>
             </ol>
         </nav>
     </div>
 </div>
 
-<div class="row mb-5">
-    <div class="col-12">
-        <a asp-action="New" class="btn btn-primary btn-sm">
-            <i class="fa fa-plus"></i> Create new customer
-        </a>
+@if (accessType == "Edit")
+{
+    <div class="row mb-5">
+        <div class="col-12">
+            <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary btn-sm">
+                <i class="fa fa-plus"></i> Create new customer
+            </a>
+        </div>
     </div>
-</div>
+}
 
 <div class="row">
     <div class="col-12 position-relative">
@@ -34,8 +40,9 @@
             <thead>
                 <tr>
                     <th>Customer</th>
-                    <th>Discount Rate</th>
+                    <th>Email address</th>
                     <th>Membership type</th>
+                    <th>Birthdate</th>
                     <th style="width: 20%">Actions</th>
                 </tr>
             </thead>
@@ -47,4 +54,10 @@
 
 @section scripts {
     <script src="~/js/customers.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function(){
+            customersView.initialize("@accessType");
+            customersView.attachEvents();
+        })
+    </script>
 }

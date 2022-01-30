@@ -2,6 +2,7 @@
 using LibApp.Application.Core.Contracts.Persistence;
 using LibApp.Application.Core.Dtos;
 using LibApp.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,7 @@ namespace LibApp.WebUI.Controllers.Api
         }
 
         [HttpPost]
+        [Authorize(Policy = "EditAccess")]
         public async Task<IActionResult> CreateBook([FromBody] BookDto bookDto)
         {
             var model = Mapper.Map<Book>(bookDto);
@@ -57,6 +59,7 @@ namespace LibApp.WebUI.Controllers.Api
         }
 
         [HttpPut]
+        [Authorize(Policy = "EditAccess")]
         public async Task<IActionResult> UpdateBook([FromBody] BookDto bookDto)
         {
             var bookInDb = await _bookRespository.GetAsync(bookDto.Id);
@@ -75,6 +78,7 @@ namespace LibApp.WebUI.Controllers.Api
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Policy = "EditAccess")]
         public async Task<IActionResult> DeleteBook(int id)
         {
             var entity = await _bookRespository.GetAsync(id);

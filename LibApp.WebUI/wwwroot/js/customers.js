@@ -1,8 +1,8 @@
-﻿(function () {
+﻿var customersView = (function () {
 
     var TABLE = "#customers";
 
-    var initializeDataTable = function () {
+    var initializeDataTable = function (accessType) {
         $(TABLE).DataTable({
             ajax: {
                 url: '/customers/getCustomers',
@@ -13,22 +13,43 @@
                     data: "name",
                 },
                 {
-                    data: "membershipType.discountRate"
+                    data: "email",
                 },
                 {
-                    data: "membershipType.name"
+                    data: "membershipType.name",
+                    render: function (data) {
+                        return `<span class="badge badge-info">${data}</span>`
+                    }
+                },
+                {
+                    data: "birthdate",
+                    render: function (data) {
+                        return data !== null
+                            ? new Date(`${data}`).toDateString()
+                            : "-";
+                    }
                 },
                 {
                     data: "id",
                     render: (data) => {
-                        return `<div>
-                        <a href='customers/edit/${data}' class="btn btn-link btn-sm">
-                            Edit
-                        </a>
-                        <a href='customers/details/${data}' class="btn btn-link btn-sm">
-                            Details
-                        </a>
-                    </div>`;
+                        if (accessType == "Edit") {
+                            return `<div>
+                                        <a href='customers/edit/${data}' class="btn btn-link btn-sm">
+                                            Edit
+                                        </a>
+                                        <a href='customers/details/${data}' class="btn btn-link btn-sm">
+                                            Details
+                                        </a>
+                                    </div>`;
+                        }
+                        else {
+                            return `<div>
+                                        <a href='customers/details/${data}' class="btn btn-link btn-sm">
+                                            Details
+                                        </a>
+                                    </div>`;
+                        }
+
                     }
                 }
             ]
@@ -40,12 +61,16 @@
         $(TABLE).on('error.dt', function (e, settings, techNote, message) {
             bootstrapAlert("DataTable Error", 'An error has been reported by DataTables: ' + message, 'danger', 5000);
         })
-        .DataTable();
+            .DataTable();
     }
 
-    $(document).ready(function () {
-        initializeDataTable();
-        attachEvents();
-    })
+    return {
+        initialize: function (accessType) {
+            initializeDataTable(accessType);
+        },
+        attachEvents: function () {
+            attachEvents();
+        }
+    }
 
 })();

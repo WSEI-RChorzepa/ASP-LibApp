@@ -2,6 +2,9 @@
 
 @{
     ViewBag.Title = "Books";
+    var accessType = User.IsInRole(RoleEnum.Owner.ToString()) 
+    ||  User.IsInRole(RoleEnum.StoreManager.ToString())
+        ? "Edit" : "View";
 }
 
 <h2>Books</h2>
@@ -21,13 +24,16 @@
     </div>
 </div>
 
-<div class="row mb-5">
-    <div class="col-12">
-        <a asp-action="New" class="btn btn-primary btn-sm">
-            <i class="fa fa-plus"></i> Create new book
-        </a>
+@if (accessType == "Edit")
+{
+    <div class="row mb-5">
+        <div class="col-12">
+            <a asp-action="New" class="btn btn-primary btn-sm">
+                <i class="fa fa-plus"></i> Create new book
+            </a>
+        </div>
     </div>
-</div>
+}
 
 <div class="row">
     <div class="col-12 position-relative">
@@ -48,4 +54,10 @@
 
 @section scripts {
 <script src="~/js/books.js" asp-append-version="true"></script>
+<script>
+    $(document).ready(function(){
+        booksView.initialize("@accessType");
+        booksView.attachEvents();
+    })
+</script>
 }

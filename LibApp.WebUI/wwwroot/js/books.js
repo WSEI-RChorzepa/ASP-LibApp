@@ -1,8 +1,8 @@
-﻿(function () {
+﻿var booksView = (function () {
 
     var TABLE = '#books';
 
-    var initializeDataTable = function () {
+    var initializeDataTable = function (accessType) {
         $(TABLE).DataTable({
             ajax: {
                 url: '/books/getBooks',
@@ -21,15 +21,26 @@
                 {
                     data: "id",
                     render: (data) => {
-                        return `<div>
-                        <a href='books/edit/${data}' class="btn btn-link btn-sm">
-                            Edit
-                        </a>
-                        <a href='books/details/${data}' class="btn btn-link btn-sm">
-                            Details
-                        </a>
-                        <button class="btn btn-link btn-sm link-sm remove" data-id="${data}">Remove</button>
-                    </div>`;
+
+                        switch (accessType) {
+                            case "View":
+                            default:
+                                return `<div>
+                                            <a href='books/details/${data}' class="btn btn-link btn-sm">
+                                                Details
+                                            </a>
+                                        </div>`;
+                            case "Edit":
+                                return `<div>
+                                            <a href='books/edit/${data}' class="btn btn-link btn-sm">
+                                                Edit
+                                            </a>
+                                            <a href='books/details/${data}' class="btn btn-link btn-sm">
+                                                Details
+                                            </a>
+                                            <button class="btn btn-link btn-sm link-sm remove" data-id="${data}">Remove</button>
+                                        </div>`;
+                        }
                     },
                 },
             ],
@@ -94,9 +105,13 @@
         })
     }
 
-    $(document).ready(function () {
-        initializeDataTable();
-        attachEvents(handleRemove);
-    })
+    return {
+        initialize: function (accessType) {
+            initializeDataTable(accessType);
+        },
+        attachEvents: function () {
+            attachEvents(handleRemove);
+        }
+    }
 
 })();

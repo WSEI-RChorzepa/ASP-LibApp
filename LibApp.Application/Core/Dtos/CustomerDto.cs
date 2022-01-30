@@ -10,5 +10,6 @@ namespace LibApp.Application.Core.Dtos
         public MembershipTypeDto MembershipType { get; set; }
         public byte MembershipTypeId { get; set; }
         public DateTime? Birthdate { get; set; }
+        public string Email { get; set; }
     }
 }
