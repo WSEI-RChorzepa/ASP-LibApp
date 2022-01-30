@@ -1,9 +1,7 @@
 @{
     ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var accessType = User.IsInRole(RoleEnum.Owner.ToString())
-        || User.IsInRole(RoleEnum.StoreManager.ToString())
-            ? "Edit" : "View";
+    var accessType = User.IsInRole(RoleEnum.Owner.ToString()) ? "Edit" : "View";
 }
 
 <h2>Customers</h2>

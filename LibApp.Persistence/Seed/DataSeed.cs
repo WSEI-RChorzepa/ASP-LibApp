@@ -54,7 +54,10 @@ namespace LibApp.Persistence.Seed
                     Name = "John User",
                     HasNewsletterSubscribed = true,
                     MembershipTypeId = 1,
-                    Birthdate = new DateTime(1987, 01, 01)
+                    Birthdate = new DateTime(1987, 01, 01),
+                    UserName = "johnUser",
+                    Email = "john.user@gmail.com",
+                    EmailConfirmed = true
                 };
 
                 var _manager = new Customer
@@ -62,7 +65,10 @@ namespace LibApp.Persistence.Seed
                     Name = "John Manager",
                     HasNewsletterSubscribed = false,
                     MembershipTypeId = 2,
-                    Birthdate = new DateTime(1987, 02, 03)
+                    Birthdate = new DateTime(1987, 02, 03),
+                    UserName = "johnManager",
+                    Email = "john.manager@gmail.com",
+                    EmailConfirmed = true
                 };
 
                 var _owner = new Customer
@@ -70,16 +76,20 @@ namespace LibApp.Persistence.Seed
                     Name = "John Owner",
                     HasNewsletterSubscribed = false,
                     MembershipTypeId = 4,
-                    Birthdate = new DateTime(1987, 02, 03)
+                    Birthdate = new DateTime(1987, 02, 03),
+                    UserName = "johnOwner",
+                    Email = "john.owner@gmail.com",
+                    EmailConfirmed = true
                 };
 
-                await _userManager.CreateAsync(_user, "!Test_1234");
-                await _userManager.CreateAsync(_manager, "!Test_1234");
-                await _userManager.CreateAsync(_owner, "!Test_1234");
 
-                //await _userManager.AddToRoleAsync(_user, RoleEnum.User.ToString());
-                //await _userManager.AddToRoleAsync(_manager, RoleEnum.StoreManager.ToString());
-                //await _userManager.AddToRoleAsync(_owner, RoleEnum.Owner.ToString());
+                await _userManager.CreateAsync(_user, "test_1234");
+                await _userManager.CreateAsync(_manager, "test_1234");
+                await _userManager.CreateAsync(_owner, "test_1234");
+
+                await _userManager.AddToRoleAsync(_user, RoleEnum.User.ToString());
+                await _userManager.AddToRoleAsync(_manager, RoleEnum.StoreManager.ToString());
+                await _userManager.AddToRoleAsync(_owner, RoleEnum.Owner.ToString());
             }
         }
 
@@ -201,9 +211,9 @@ namespace LibApp.Persistence.Seed
 
         public async Task Initialize()
         {
+            await InitializeMembershipTypes();
             await CreateUserWithRoles();
             await InitializeGenre();
-            await InitializeMembershipTypes();
             await InitializeBooks();
         }
     }

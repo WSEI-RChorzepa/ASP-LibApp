@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LibApp.WebUI.Areas.Identity.Pages.Account
 {
-    [Authorize(Policy ="AdminAccess")]
+    [Authorize(Policy = "AdminAccess")]
     public partial class RegisterModel : PageModel
     {
         private readonly IMediator _mediator;
