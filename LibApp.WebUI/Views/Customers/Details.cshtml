@@ -36,6 +36,9 @@
 <div class="row">
     <div class="col-12">
         <a asp-action="Index" class="btn btn-primary btn-sm">Back</a>
-        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Edit customer</a>
+        @if(User.IsInRole(RoleEnum.Owner.ToString()) || User.IsInRole(RoleEnum.StoreManager.ToString()))
+        {
+             <a asp-area="Identity" asp-page="/Account/Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Edit customer</a>
+        }
     </div>
 </div>

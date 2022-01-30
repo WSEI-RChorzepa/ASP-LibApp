@@ -8,6 +8,7 @@ using LibApp.WebUI.Models;
 using LibApp.Application.UseCases.Customers.Commands;
 using LibApp.Application.Core.Exceptions;
 using Microsoft.AspNetCore.Authorization;
+using LibApp.Application.UseCases.Account.Commands;
 
 namespace LibApp.WebUI.Controllers
 {
@@ -79,6 +80,17 @@ namespace LibApp.WebUI.Controllers
             }
 
             return RedirectToAction("Index", "Customers");
+        }
+
+        [Authorize(Policy = "EditAccess")]
+        public async Task<IActionResult> Remove(int id)
+        {
+            var response = await Mediator.Send(new RemoveAccount.Command { Id = id });
+
+            if (!response.Succeeded)
+                return BadRequest();
+
+            return Ok();
         }
     }
 }

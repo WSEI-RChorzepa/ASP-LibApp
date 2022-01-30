@@ -80,7 +80,8 @@ namespace LibApp.Application.UseCases.Books.Commands
                             throw new Exception("An error has occured while creating a book object.");
                     }
 
-                    return response.StatusCode == System.Net.HttpStatusCode.Created
+                    return response.StatusCode == System.Net.HttpStatusCode.OK 
+                            || response.StatusCode ==  System.Net.HttpStatusCode.Created
                         ? Unit.Value
                         : throw new Exception("An error has occured while creating a book object.");
                 }

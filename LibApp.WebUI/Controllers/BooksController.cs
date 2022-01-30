@@ -64,6 +64,8 @@ namespace LibApp.WebUI.Controllers
                 await Mediator.Send(model.Id == 0
                    ? Mapper.Map<CreateBook.Command>(model)
                    : Mapper.Map<UpdateBook.Command>(model));
+
+                TempData["Message"] = $"The book: {model.Name} was successfully {(model.Id != 0 ? "updated." : "created.")}.";
             }
             catch(ValidationException exception)
             {

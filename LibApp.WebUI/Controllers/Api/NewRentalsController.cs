@@ -1,6 +1,6 @@
-﻿using LibApp.Domain.Entities;
+﻿using LibApp.Application.Core.Dtos;
+using LibApp.Domain.Entities;
 using LibApp.Persistence;
-using LibApp.WebUI.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;

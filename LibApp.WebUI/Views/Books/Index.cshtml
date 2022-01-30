@@ -60,4 +60,10 @@
         booksView.attachEvents();
     })
 </script>
+
+  @if(TempData["Message"] != null) {
+        <script>
+            bootstrapAlert("Success", "@TempData["Message"]", "success")
+        </script>    
+    }
 }

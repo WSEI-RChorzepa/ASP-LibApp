@@ -1,11 +1,11 @@
-﻿@page
-@model LibApp.WebUI.Areas.Identity.Pages.Account.RegisterModel
+﻿@page "{id:int}"
+@model LibApp.WebUI.Areas.Identity.Pages.Account.EditModel
 @{
     ViewData["Title"] = "Register";
 }
 
 <div class="mt-5">
-    <h6>Register customer</h6>
+    <h6>Edit customer account</h6>
 
     <div class="row">
         <div class="col-12">
@@ -18,7 +18,7 @@
                         Account
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        Register customer
+                        Edit customer
                     </li>
                 </ol>
             </nav>
@@ -29,27 +29,12 @@
         <div class="col-md-12">
             <form method="post">
 
-                <p>Create a new customer account</p>
+                <p>Edit customer account: @Model.Id</p>
                 <hr />
 
                 <div class="row">
                     <div class="col-12">
                         <div asp-validation-summary="All" class="text-danger"></div>
-                    </div>
-
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label asp-for="Input.Email"></label>
-                            <input asp-for="Input.Email" class="form-control form-control-sm" />
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Input.Password"></label>
-                            <input asp-for="Input.Password" class="form-control form-control-sm" />
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Input.ConfirmPassword"></label>
-                            <input asp-for="Input.ConfirmPassword" class="form-control form-control-sm" />
-                        </div>
                     </div>
 
                     <div class="col-6">
@@ -93,7 +78,15 @@
 
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-sm">Create account</button>
+                @if (Model.AccountIsExist)
+                {
+                    <button type="submit" class="btn btn-primary btn-sm">Update account</button>
+                }
+                
+                 <a asp-controller="Customers" asp-action="Index" class="btn btn-secondary btn-sm">
+                    Return
+                </a>
+
                 <a asp-controller="Home" asp-action="Index" class="btn btn-secondary btn-sm">
                     Back to main page
                 </a>
